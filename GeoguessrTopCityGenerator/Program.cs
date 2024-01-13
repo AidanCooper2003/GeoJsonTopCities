@@ -2,7 +2,8 @@
 {
     internal class Program
     {
-        static string fileName = "\\worldcities.csv";
+        static string citiesFileName = "\\worldcities.csv";
+        static string countriesFileName = "\\validcountries.txt";
 
         static void Main(string[] args)
         {
@@ -18,6 +19,7 @@
 
         static private void generateMapJson(String filePath)
         {
+
             // Operates under the assumption that the CSV file is under the same format as the one from https://simplemaps.com/data/world-cities
             foreach (string line in File.ReadLines(filePath))
             {
