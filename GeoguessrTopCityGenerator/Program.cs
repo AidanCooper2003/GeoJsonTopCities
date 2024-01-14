@@ -63,8 +63,8 @@ namespace GeoguessrTopCityGenerator
 
         static void Main(string[] args)
         {
-            // Change to getDevFilePath() if testing within visual studio
-            string filePath = getDevFilePath();
+            // Change to getDevFilePath() if testing within visual studio and getAppFilePath() for compilation.
+            string filePath = getAppFilePath();
             Console.WriteLine("Welcome! This program will generate a json file for importing into map-making.app that will contain the most populous cities of every geoguessr valid country. Make sure to put your csv file into the same directory as this program.");
             Console.WriteLine("How many cities per country do you want to generate?");
             int cityCount = Convert.ToInt32(Console.ReadLine());
@@ -129,8 +129,6 @@ namespace GeoguessrTopCityGenerator
             }
 
             // Thanks to https://stackoverflow.com/questions/16921652/how-to-write-a-json-file-in-c Bartosz Pierzchlewicz and Liam for this one!
-            //await using FileStream createStream = File.Create(filePath + coordinatesFileName);
-            //await JsonSerializer.SerializeAsync(createStream, coordinates);
             string json = JsonSerializer.Serialize(coordinates);
             File.WriteAllText(filePath + coordinatesFileName, json);
         }
