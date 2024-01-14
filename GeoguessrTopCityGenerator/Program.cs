@@ -14,15 +14,13 @@ namespace GeoguessrTopCityGenerator
             this.lng = longitude;
 
             //tags
-            List<Dictionary<string, List<string>>> extras = new List<Dictionary<string, List<string>>>();
             List<string> tags = new List<string>();
             tags.Add(countryName);
-            tags.Add(cityName);
+            //tags.Add(cityName);
             tags.Add(Convert.ToString(populationOrder));
             Dictionary<string, List<string>> extrasContents = new Dictionary<string, List<string>>();
             extrasContents.Add("tags", tags);
-            extras.Add(extrasContents);
-            this.extras = extras;
+            this.extra = extrasContents;
 
             //defaults, unspecified need to be left null.
             heading = 0;
@@ -53,7 +51,7 @@ namespace GeoguessrTopCityGenerator
 
         // Unique
         [JsonInclude]
-        public List<Dictionary<string, List<string>>> extras;
+        public Dictionary<string, List<string>> extra;
 
     }
 
