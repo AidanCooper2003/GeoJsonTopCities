@@ -4,4 +4,4 @@ This program is built to use the basic world city dataset from Simple Maps at ht
 
 Note: This dataset does not include every city, and thus might have some (unknown) margin of error.
 
-Created for my friend SwordSlicer56[https://www.youtube.com/@swordslicer56]
+[Created for my friend SwordSlicer56](https://www.youtube.com/@swordslicer56)
